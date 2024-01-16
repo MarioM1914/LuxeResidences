@@ -15,7 +15,7 @@ export default function CreateListing() {
   const [files, setFiles] = useState([]);
   const [formData, setFormData] = useState({
     imageUrls: [],
-    name: "",
+    title: "",
     description: "",
     address: "",
     type: "rent",
@@ -163,14 +163,14 @@ export default function CreateListing() {
         <div className="flex flex-col gap-4 flex-1">
           <input
             type="text"
-            placeholder="Name"
+            placeholder="Title"
             className="border p-3 rounded-lg"
-            id="name"
+            id="title"
             maxLength="62"
             minLength="10"
             required
             onChange={handleChange}
-            value={formData.name}
+            value={formData.title}
           />
           <textarea
             type="text"
