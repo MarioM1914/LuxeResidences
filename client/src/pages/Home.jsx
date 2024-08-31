@@ -45,6 +45,11 @@ export default function Home() {
     };
     fetchOfferListings();
   }, []);
+
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div>
       {/* top */}
@@ -54,7 +59,7 @@ export default function Home() {
           <br />
           place with ease
         </h1>
-        <div className="text-gray-400 text-xs sm:text-sm">
+        <div className="text-slate-700 text-xs sm:text-sm">
           LuxeResidences is the best place to find your next perfect place to
           live.
           <br />
@@ -63,6 +68,7 @@ export default function Home() {
         <Link
           to={"/search"}
           className="text-xs sm:text-sm text-blue-800 font-bold hover:underline"
+          onClick={handleLinkClick}
         >
           Let's get started...
         </Link>
@@ -98,6 +104,7 @@ export default function Home() {
               <Link
                 className="text-sm text-blue-800 hover:underline"
                 to={"/search?offer=true"}
+                onClick={handleLinkClick}
               >
                 Show more offers
               </Link>
@@ -118,6 +125,7 @@ export default function Home() {
               <Link
                 className="text-sm text-blue-800 hover:underline"
                 to={"/search?type=rent"}
+                onClick={handleLinkClick}
               >
                 Show more places for rent
               </Link>
@@ -138,6 +146,7 @@ export default function Home() {
               <Link
                 className="text-sm text-blue-800 hover:underline"
                 to={"/search?type=sell"}
+                onClick={handleLinkClick}
               >
                 Show more places for sale
               </Link>

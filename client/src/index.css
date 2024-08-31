@@ -5,3 +5,10 @@
 body {
   background-color: rgb(241, 245, 241);
 }
+
+@media (max-width: 280px) {
+  .fixed-position {
+    position: relative; /* Lock the hamburger menu in place */
+    left: 10px;
+  }
+}
