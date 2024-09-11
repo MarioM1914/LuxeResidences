@@ -13,12 +13,16 @@ export default function SignIn() {
   const { loading, error } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const handleChange = (e) => {
+    dispatch(signInFailure(null));
+
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
     });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -30,6 +34,7 @@ export default function SignIn() {
         },
         body: JSON.stringify(formData),
       });
+
       const data = await res.json();
       if (data.success === false) {
         dispatch(signInFailure(data.message));
@@ -41,6 +46,7 @@ export default function SignIn() {
       dispatch(signInFailure(error.message));
     }
   };
+
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
